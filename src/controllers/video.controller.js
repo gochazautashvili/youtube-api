@@ -309,7 +309,7 @@ export const search = async (req, res) => {
 
 
     try {
-        const videos = await videoModule.find({ title: { $regex: path, $options: "i" } }).populate('channelID')
+        const videos = await videoModule.find({ description: { $regex: path, $options: "i" } }).populate('channelID')
 
         res.status(200).json(videos)
     } catch (error) {
